@@ -22,14 +22,15 @@
 	$distrito = $_POST['distrito'];
 	$tipo_seleccion = $_POST['tipo_seleccion'];
 	$tipo_recompensa = $_POST['tipo_recompensa'];
-	$url_foto = $id_empresa.$titulo;
+	$titulo_sin_espacios = str_replace(' ', '', $titulo);
+	$url_foto = $id_empresa.$titulo_sin_espacios.".jpg";
 	
 	$consulta_string = "insert into actividad (id, titulo, descripcion, empresa, fecha_creacion, fecha_fin, 
 	participantes_actuales, participantes_requeridos, foto, tipo_recompensa, recompensa, distrito, tipo_seleccion, estado)  
 	values(null, '{$titulo}', '{$descripcion}', $id_empresa, CURDATE(), '{$fecha_fin}', 0, {$participantes_requeridos}, 
 	'{$url_foto}', $tipo_recompensa, {$recompensa}, $distrito, $tipo_seleccion, 0);";
 
-	$ruta_subida = "imagenes_actividades/{$url_foto}.jpg";
+	$ruta_subida = "imagenes_actividades/$url_foto";
 	
 	if (mysqli_query($con, $consulta_string))
 	{

@@ -136,7 +136,7 @@ public class DetailsAndApplyActivity extends AppCompatActivity {
         requiredParticipants.setText("Se necesitan " + actividad.getRequiredParticipants() + " personas");
         distrito.setText(actividad.getDistrito());
         reward.setText(actividad.getRewardType() + " : " + actividad.getReward());
-        ImageRequest request = new ImageRequest(ValidSession.IMAGENES_ACTIVIDADES + actividad.getPhoto() + ".jpg", new Response.Listener<Bitmap>() {
+        ImageRequest request = new ImageRequest(ValidSession.IMAGENES_ACTIVIDADES + actividad.getPhoto(), new Response.Listener<Bitmap>() {
             @Override
             public void onResponse(Bitmap response) {
                 photo.setImageBitmap(response);
