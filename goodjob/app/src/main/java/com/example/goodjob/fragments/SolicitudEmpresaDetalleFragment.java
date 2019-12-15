@@ -19,32 +19,24 @@ public class SolicitudEmpresaDetalleFragment extends Fragment {
     /* TODO 1.1 aqui declaras los views del layout.
         Ejemplo: private TextView fechaRegistro;
     * */
-    TextView razon;
+
     TextView razonSocial;
 
-    TextView nom;
     TextView nombreComercial;
 
-    TextView ru;
     TextView ruc;
 
-    TextView telf;
     TextView telefono;
 
-    TextView corr;
     TextView correo;
 
-    TextView codigo;
     TextView codigoPostal;
 
-    TextView distri;
     TextView distrito;
 
-    TextView direcc;
     TextView direccion;
 
-    ImageButton aceptarSolicitud;
-    ImageButton rechazarSolicitud;
+
 
     public SolicitudEmpresaDetalleFragment() {
     }
@@ -66,32 +58,26 @@ public class SolicitudEmpresaDetalleFragment extends Fragment {
         /* TODO 1.2 aqui haces los findViewById();
             Ejemplo: fechaRegistro = v.findViewById(R.id.tvFechaRegistro);
         * */
-        razon = v.findViewById(R.id.tvRazon);
+
         razonSocial = v.findViewById(R.id.tvRazonSocial);
 
-        nom = v.findViewById(R.id.tvNombre);
         nombreComercial = v.findViewById(R.id.tvNombreComercial);
 
-        ru = v.findViewById(R.id.tvRu);
         ruc = v.findViewById(R.id.tvRuc);
 
-        telf = v.findViewById(R.id.tvTelef);
         telefono = v.findViewById(R.id.tvTelefono);
 
-        corr = v.findViewById(R.id.tvCorr);
         correo = v.findViewById(R.id.tvCorreo);
 
-        codigo = v.findViewById(R.id.tvCodigo);
         codigoPostal = v.findViewById(R.id.tvCodigoPostal);
 
-        distri = v.findViewById(R.id.tvDistri);
         distrito = v.findViewById(R.id.tvDistrito);
 
-        direcc= v.findViewById(R.id.tvDirecc);
         direccion = v.findViewById(R.id.tvDireccion);
 
-        aceptarSolicitud =v.findViewById(R.id.btnAceptarSolicitud);
-        rechazarSolicitud = v.findViewById(R.id.btnRechazarSolicitud);
+
+
+
 
 
     }
@@ -102,7 +88,7 @@ public class SolicitudEmpresaDetalleFragment extends Fragment {
         * */
 
         razonSocial.setText(e.getRazonSocial());
-        telefono.setText(e.getRazonSocial());
+        nombreComercial.setText(e.getNombreComercial());
         ruc.setText(e.getRuc());
         telefono.setText(e.getTelefono());
         correo.setText(e.getCorreo());
