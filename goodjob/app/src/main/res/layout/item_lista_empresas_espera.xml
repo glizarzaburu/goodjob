@@ -1,70 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/default_margin_bottom">
+    android:layout_marginBottom="@dimen/default_margin_bottom"
+    android:background="#f4fcf6"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/empresaNombre"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/small_margin_right"
-        android:paddingStart="@dimen/default_padding_left"
-        android:paddingEnd="@dimen/default_padding_right"
-        android:text="@string/empresa"
-        android:textSize="@dimen/text_size_listado_productos_espera" />
+        android:layout_margin="8dp"
+        android:background="@drawable/border_estado_mis_actividades"
+        android:paddingBottom="@dimen/default_margin_bottom">
 
-    <TextView
-        android:id="@+id/tvEmpresaNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="@dimen/default_margin_right"
-        android:layout_marginBottom="@dimen/small_margin_right"
-        android:text="valor del nombre comercial empresa"
-        android:textSize="@dimen/text_size_listado_productos_espera" />
+        <TextView
+            android:id="@+id/empresaNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin_left"
+            android:layout_marginTop="@dimen/default_margin_top"
+            android:text="Empresa :"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/rucEmpresa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/empresaNombre"
-        android:layout_marginBottom="@dimen/small_margin_right"
-        android:paddingStart="@dimen/default_padding_left"
-        android:paddingEnd="@dimen/default_padding_right"
-        android:text="@string/empresa_ruc"
-        android:textSize="@dimen/text_size_listado_productos_espera" />
+        <TextView
+            android:id="@+id/tvEmpresaNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/default_margin_top"
+            android:layout_marginEnd="@dimen/default_margin_right"
+            android:text=" comercial empresa"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/tvRucEmpresa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvEmpresaNombre"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="@dimen/default_margin_right"
-        android:layout_marginBottom="@dimen/small_margin_right"
-        android:text="valor del ruc"
-        android:textSize="@dimen/text_size_listado_productos_espera" />
+        <TextView
+            android:id="@+id/rucEmpresa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/empresaNombre"
+            android:layout_marginStart="@dimen/default_margin_left"
+            android:layout_marginTop="@dimen/default_margin_top"
+            android:text="Ruc :"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/empresaFechaRegistro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rucEmpresa"
-        android:layout_marginBottom="@dimen/small_margin_right"
-        android:paddingStart="@dimen/default_padding_left"
-        android:paddingEnd="@dimen/default_padding_right"
-        android:text="@string/empresa_fecha_registrada"
-        android:textSize="@dimen/text_size_listado_productos_espera" />
+        <TextView
+            android:id="@+id/tvRucEmpresa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvEmpresaNombre"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/default_margin_right"
+            android:layout_marginEnd="@dimen/default_margin_right"
+            android:text="valor del ruc"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/tvEmpresaFechaRegistro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvRucEmpresa"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="@dimen/default_margin_right"
-        android:layout_marginBottom="@dimen/small_margin_right"
-        android:text="valor de la fecha registro"
-        android:textSize="@dimen/text_size_listado_productos_espera" />
-</RelativeLayout>
+        <TextView
+            android:id="@+id/empresaFechaRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rucEmpresa"
+            android:layout_marginStart="@dimen/default_margin_left"
+            android:layout_marginTop="@dimen/default_margin_top"
+            android:text="Solicitado :"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvEmpresaFechaRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvRucEmpresa"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/default_margin_top"
+            android:layout_marginEnd="@dimen/default_margin_right"
+            android:text="valor de la fecha registro"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</LinearLayout>
