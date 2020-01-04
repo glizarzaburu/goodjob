@@ -61,6 +61,7 @@
                 app:cardCornerRadius="70dp"
                 app:cardElevation="3dp">
 
+
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -86,12 +87,15 @@
                         android:layout_below="@+id/txtUser"
                         android:background="#77D8CFCF" />
 
+
                     <EditText
                         android:id="@+id/txtPass"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/view1"
-                        android:layout_margin="15dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
                         android:background="@android:color/transparent"
                         android:drawableLeft="@drawable/ic_lock_black_24dp"
                         android:drawablePadding="30dp"

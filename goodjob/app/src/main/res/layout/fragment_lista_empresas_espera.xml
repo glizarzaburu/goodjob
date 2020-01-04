@@ -6,14 +6,30 @@
     android:orientation="vertical"
     tools:context=".fragments.ListaEmpresasEsperaFragment">
 
-    <TextView
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/default_margin_top"
-        android:layout_marginBottom="@dimen/default_margin_bottom"
-        android:gravity="center_horizontal"
-        android:text="@string/empresas_espera"
-        android:textSize="24sp" />
+        android:layout_margin="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Solicitud de"
+            android:textColor="#FF9800"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text=" Empresas"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvSolicitudesEmpresasEspera"

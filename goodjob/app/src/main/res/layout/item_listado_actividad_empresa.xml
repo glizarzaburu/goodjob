@@ -2,7 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/default_margin_bottom">
+    android:layout_marginBottom="@dimen/default_margin_bottom"
+    android:background="@drawable/border_estado_mis_actividades"
+    android:padding="5dp"
+    android:layout_margin="5dp">
 
     <TextView
         android:id="@+id/actividadNombre"
@@ -11,8 +14,9 @@
         android:layout_marginBottom="@dimen/small_margin_right"
         android:paddingStart="@dimen/default_padding_left"
         android:paddingEnd="@dimen/default_padding_right"
-        android:text="@string/actividad"
-        android:textSize="@dimen/text_size_listado_productos_espera" />
+        android:text="Actividad :"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/tvActividadNombre"
@@ -22,18 +26,19 @@
         android:layout_marginEnd="@dimen/default_margin_right"
         android:layout_marginBottom="@dimen/small_margin_right"
         android:text="valor del nombre"
-        android:textSize="@dimen/text_size_listado_productos_espera" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/actividadFechaRegistro"
         android:layout_width="wrap_content"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_below="@id/actividadNombre"
         android:layout_marginBottom="@dimen/small_margin_right"
         android:paddingStart="@dimen/default_padding_left"
         android:paddingEnd="@dimen/default_padding_right"
-        android:text="@string/actividad_fecha_registro"
-        android:textSize="@dimen/text_size_listado_productos_espera" />
+        android:text="Registrada :"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/tvActividadFechaRegistro"
@@ -44,18 +49,19 @@
         android:layout_marginEnd="@dimen/default_margin_right"
         android:layout_marginBottom="@dimen/small_margin_right"
         android:text="valor de la fecha registro"
-        android:textSize="@dimen/text_size_listado_productos_espera" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/actividadFechaRealizarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/actividadFechaRegistro"
+        android:textStyle="bold"
         android:layout_marginBottom="@dimen/small_margin_right"
         android:paddingStart="@dimen/default_padding_left"
         android:paddingEnd="@dimen/default_padding_right"
-        android:text="@string/actividad_fecha_realizarse"
-        android:textSize="@dimen/text_size_listado_productos_espera" />
+        android:text="Se realiza :"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/tvActividadFechaRealizarse"
@@ -66,7 +72,7 @@
         android:layout_marginEnd="@dimen/default_margin_right"
         android:layout_marginBottom="@dimen/small_margin_right"
         android:text="valor de la fecha a realizarse"
-        android:textSize="@dimen/text_size_listado_productos_espera" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/actividadEmpresa"
@@ -76,8 +82,9 @@
         android:layout_marginBottom="@dimen/small_margin_right"
         android:paddingStart="@dimen/default_padding_left"
         android:paddingEnd="@dimen/default_padding_right"
-        android:text="@string/actividad_distrito"
-        android:textSize="@dimen/text_size_listado_productos_espera" />
+        android:text="Distrito :"
+        android:textStyle="bold"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/tvActividadEmpresa"
@@ -88,5 +95,5 @@
         android:layout_marginEnd="@dimen/default_margin_right"
         android:layout_marginBottom="@dimen/small_margin_right"
         android:text="valor del distrito"
-        android:textSize="@dimen/text_size_listado_productos_espera" />
+        android:textSize="20sp" />
 </RelativeLayout>
