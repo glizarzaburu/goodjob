@@ -16,27 +16,14 @@ import com.example.goodjob.classes.Empresa;
 public class SolicitudEmpresaDetalleFragment extends Fragment {
 
     private Empresa empresa;
-    /* TODO 1.1 aqui declaras los views del layout.
-        Ejemplo: private TextView fechaRegistro;
-    * */
-
-    TextView razonSocial;
-
-    TextView nombreComercial;
-
-    TextView ruc;
-
-    TextView telefono;
-
-    TextView correo;
-
-    TextView codigoPostal;
-
-    TextView distrito;
-
-    TextView direccion;
-
-
+    private TextView razonSocial;
+    private TextView nombreComercial;
+    private TextView ruc;
+    private TextView telefono;
+    private TextView correo;
+    private TextView codigoPostal;
+    private TextView distrito;
+    private TextView direccion;
 
     public SolicitudEmpresaDetalleFragment() {
     }
@@ -55,38 +42,17 @@ public class SolicitudEmpresaDetalleFragment extends Fragment {
     }
 
     private void mapearViews(View v) {
-        /* TODO 1.2 aqui haces los findViewById();
-            Ejemplo: fechaRegistro = v.findViewById(R.id.tvFechaRegistro);
-        * */
-
         razonSocial = v.findViewById(R.id.tvRazonSocial);
-
         nombreComercial = v.findViewById(R.id.tvNombreComercial);
-
         ruc = v.findViewById(R.id.tvRuc);
-
         telefono = v.findViewById(R.id.tvTelefono);
-
         correo = v.findViewById(R.id.tvCorreo);
-
         codigoPostal = v.findViewById(R.id.tvCodigoPostal);
-
         distrito = v.findViewById(R.id.tvDistrito);
-
         direccion = v.findViewById(R.id.tvDireccion);
-
-
-
-
-
-
     }
 
     private void mostrarDatos(Empresa e) {
-        /* TODO 1.3 y aca haces los setText para mostrar la info en el layout.
-            Ejemplo: fechaRegistro.setText(e.getFechaRegistro());
-        * */
-
         razonSocial.setText(e.getRazonSocial());
         nombreComercial.setText(e.getNombreComercial());
         ruc.setText(e.getRuc());
@@ -97,9 +63,4 @@ public class SolicitudEmpresaDetalleFragment extends Fragment {
         direccion.setText(e.getDireccion());
 
     }
-
-    /* TODO 1.4 este solo es un recordatorio para que borres todos los TODO(1.0 - 1.4)
-        una vez termines.
-     * */
-
 }
