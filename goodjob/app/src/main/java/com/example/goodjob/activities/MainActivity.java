@@ -28,6 +28,7 @@ import com.example.goodjob.fragments.ListaEmpresasEsperaFragment;
 import com.example.goodjob.fragments.ListadoActividadEmpresaEstadoFragment;
 import com.example.goodjob.fragments.PreMyActivitesFragment;
 import com.example.goodjob.fragments.ProductoEsperaFragment;
+import com.example.goodjob.fragments.ProductosCanjeFragment;
 import com.example.goodjob.fragments.ProfileFragment;
 import com.example.goodjob.fragments.RegistrarProductoFragment;
 import com.example.goodjob.fragments.SolicitudActividadesEsperaFragment;
@@ -113,8 +114,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     selectedFragment = new ProfileFragment();
                     break;
                 case R.id.navigation_premiun:
-                    startActivity(new Intent(MainActivity.this, SuscriptionActivity.class));
-                    return true;
+                    selectedFragment = new ProductosCanjeFragment();
+                    break;
                 case R.id.navigation_estado_mis_actividades:
                     if (ValidSession.usuarioLogueado == null && ValidSession.empresaLogueada == null) {
                         cuadroDialogo();
@@ -123,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     selectedFragment = new PreMyActivitesFragment();
                     break;
             }
-            getSupportFragmentManager().beginTransaction().replace(R.id.containerFragments, selectedFragment).commit();
+            cargarFragment(selectedFragment);
             return true;
         }
     };
