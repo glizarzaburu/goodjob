@@ -15,6 +15,7 @@ import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.goodjob.R;
 import com.example.goodjob.classes.ProductoCanje;
+import com.example.goodjob.classes.ValidSession;
 
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class ProductoCanjeAdapter extends RecyclerView.Adapter<ProductoCanjeAdap
         pvh.producto.setText(p.getProducto());
         pvh.stock.setText(String.valueOf(p.getStock()));
         pvh.valor.setText(String.valueOf(p.getValor()));
-        ImageRequest imageRequest = new ImageRequest(p.getImagen(), new Response.Listener<Bitmap>() {
+        ImageRequest imageRequest = new ImageRequest(ValidSession.IMAGENES_PRODUCTOS + p.getImagen(), new Response.Listener<Bitmap>() {
             @Override
             public void onResponse(Bitmap response) {
                 pvh.imagen.setImageBitmap(response);
