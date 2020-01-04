@@ -8,12 +8,15 @@ import android.widget.TextView;
 import com.example.goodjob.R;
 import com.example.goodjob.adapter.EstadoMisActividadesAdapter;
 
+import java.text.BreakIterator;
+
 public class EstadoMisActividadesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     public TextView titulo;
     public TextView fecha;
     public TextView estado;
-
+    public TextView distrito;
+    public View item;
     private EstadoMisActividadesAdapter.OnEstadoActividadListener onEstadoActividadListener;
 
     public EstadoMisActividadesViewHolder(@NonNull View itemView, EstadoMisActividadesAdapter.OnEstadoActividadListener onEstadoActividadListener) {
@@ -22,6 +25,8 @@ public class EstadoMisActividadesViewHolder extends RecyclerView.ViewHolder impl
         titulo = itemView.findViewById(R.id.tvTitulo);
         fecha = itemView.findViewById(R.id.tvFecha);
         estado = itemView.findViewById(R.id.tvEstado);
+        distrito = itemView.findViewById(R.id.tvDistritoValue);
+        item = itemView.findViewById(R.id.textItem);
 
         this.onEstadoActividadListener = onEstadoActividadListener;
         itemView.setOnClickListener(this);

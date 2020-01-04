@@ -1,5 +1,7 @@
 package com.example.goodjob.classes;
 
+import android.view.View;
+
 import org.json.JSONObject;
 
 public class EstadoMisActividadesResponse {
@@ -9,6 +11,8 @@ public class EstadoMisActividadesResponse {
     private String autor;
     private String fecha;
     private String estado;
+    private  String distrito;
+    private View item;
 
     public static EstadoMisActividadesResponse cargarDataDesdeJsonObject(JSONObject data) {
         EstadoMisActividadesResponse miActividad = new EstadoMisActividadesResponse();
@@ -24,7 +28,10 @@ public class EstadoMisActividadesResponse {
         else if (estado == 3)
             miActividad.estado = "Rechazado";
 
+        miActividad.distrito=data.optString("distrito");
+
         return miActividad;
+
     }
 
     public Integer getId() {
@@ -65,5 +72,16 @@ public class EstadoMisActividadesResponse {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+
+    public String getDistrito() {return distrito; }
+
+    public View getItem() {
+        return item;
+    }
+
+    public void setItem(View item) {
+        this.item = item;
     }
 }
