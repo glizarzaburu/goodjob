@@ -40,8 +40,13 @@ public class EstadoMisActividadesAdapter extends RecyclerView.Adapter<EstadoMisA
         eav.estado.setText(misActividades.get(posicion).getEstado());
         eav.distrito.setText(misActividades.get(posicion).getDistrito());
         if(misActividades.get(posicion).getEstado().equals("Aceptado")){
-            eav.item.setBackgroundTintList(ContextCompat.getColorStateList(eav.itemView.getContext(), R.color.colorGreen));
+            eav.item.setBackgroundTintList(ContextCompat.getColorStateList(eav.itemView.getContext(), R.color.colorAceptado));
+        }if(misActividades.get(posicion).getEstado().equals("En Espera")){
+            eav.item.setBackgroundTintList(ContextCompat.getColorStateList(eav.itemView.getContext(), R.color.colorEnEspera));
+        }if(misActividades.get(posicion).getEstado().equals("Rechazado")){
+            eav.item.setBackgroundTintList(ContextCompat.getColorStateList(eav.itemView.getContext(), R.color.colorRechazado));
         }
+
     }
 
     @Override
