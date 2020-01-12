@@ -16,13 +16,14 @@
     $valor = $_POST['valor'];
     $stock = $_POST['stock'];
     $empresa = $_POST['id_empresa'];
-    $imagen = $_POST['imagen'];
-    $url_imagen = $empresa.$producto.$valor;
+	$imagen = $_POST['imagen'];
+	$producto_sin_espacio = str_replace(' ', '', $producto);
+    $url_imagen = $empresa.$producto_sin_espacio.$valor.".jpg";
 	
     $consulta_string = "INSERT INTO producto(nombre, stock, valor, imagen, 
     empresa, fecha_registro) VALUES ('$producto', $stock, $valor, '$url_imagen', $empresa, curdate());";
 
-    $ruta_subida = "imagenes_productos/$url_imagen.jpg";
+    $ruta_subida = "imagenes_productos/$url_imagen";
 	
 	if (mysqli_query($con, $consulta_string))
 	{

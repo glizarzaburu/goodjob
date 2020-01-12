@@ -50,7 +50,7 @@ public class ProductosCanjeFragment extends Fragment {
     }
 
     private void cargarProductos() {
-        String url = ValidSession.IP_IMAGENES + "/ws_listarProductosCanjeables.php";
+        String url = ValidSession.IP + "/ws_listarProductosCanjeables.php";
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -78,10 +78,11 @@ public class ProductosCanjeFragment extends Fragment {
     private ProductoCanje cargarDesdeJsonObject(JSONObject data) {
         ProductoCanje p = new ProductoCanje();
         p.setId(data.optInt("id"));
-        p.setProducto(data.optString("producto"));
-        p.setImagen(data.optString("imagen_url"));
+        p.setProducto(data.optString("nombre"));
+        p.setImagen(data.optString("url_imagen"));
         p.setStock(data.optInt("stock"));
         p.setValor(data.optDouble("valor"));
+        p.setEmpresa(data.optString("empresa"));
         return p;
     }
 

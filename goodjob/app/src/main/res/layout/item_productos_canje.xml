@@ -13,6 +13,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:contentDescription="@string/producto"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,12 +26,12 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
+        android:text="@string/producto_canje"
         app:layout_constraintBottom_toTopOf="@+id/tvProductoCanjeStock"
         app:layout_constraintEnd_toStartOf="@+id/tvProductoCanjeValue"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivProductoCanjeImagen"
-        tools:text="Producto" />
+        app:layout_constraintTop_toBottomOf="@+id/ivProductoCanjeImagen" />
 
     <TextView
         android:id="@+id/tvProductoCanjeStock"
@@ -38,12 +39,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
+        android:text="@string/stock"
         app:layout_constraintBottom_toTopOf="@+id/tvProductoCanjeValor"
         app:layout_constraintEnd_toStartOf="@+id/tvProductoCanjeStockValue"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvProductoCanje"
-        tools:text="Stock" />
+        app:layout_constraintTop_toBottomOf="@+id/tvProductoCanje" />
 
     <TextView
         android:id="@+id/tvProductoCanjeValor"
@@ -51,12 +52,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
+        android:text="@string/valor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tvProductoCanjeValorValue"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvProductoCanjeStock"
-        tools:text="Valor" />
+        app:layout_constraintTop_toBottomOf="@+id/tvProductoCanjeStock" />
 
     <TextView
         android:id="@+id/tvProductoCanjeValue"

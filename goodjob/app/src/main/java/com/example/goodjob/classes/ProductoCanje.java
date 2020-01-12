@@ -3,18 +3,27 @@ package com.example.goodjob.classes;
 public class ProductoCanje {
 
     private Integer id, stock;
-    private String producto, imagen;
+    private String producto, imagen, empresa;
     private Double valor;
 
     public ProductoCanje() {
     }
 
-    public ProductoCanje(Integer id, Integer stock, String producto, String imagen, Double valor) {
+    public ProductoCanje(Integer id, Integer stock, String producto, String imagen, Double valor, String empresa) {
         this.id = id;
         this.stock = stock;
         this.producto = producto;
         this.imagen = imagen;
         this.valor = valor;
+        this.empresa = empresa;
+    }
+
+    public String getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
     }
 
     public Integer getStock() {
