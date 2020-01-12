@@ -1,6 +1,8 @@
 package com.example.goodjob.adapter;
 
+import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +38,15 @@ public class EstadoMisActividadesAdapter extends RecyclerView.Adapter<EstadoMisA
         eav.titulo.setText(misActividades.get(posicion).getTitulo());
         eav.fecha.setText(dateFormat(posicion));
         eav.estado.setText(misActividades.get(posicion).getEstado());
+        eav.distrito.setText(misActividades.get(posicion).getDistrito());
+        if(misActividades.get(posicion).getEstado().equals("Aceptado")){
+            eav.item.setBackgroundTintList(ContextCompat.getColorStateList(eav.itemView.getContext(), R.color.colorAceptado));
+        }if(misActividades.get(posicion).getEstado().equals("En Espera")){
+            eav.item.setBackgroundTintList(ContextCompat.getColorStateList(eav.itemView.getContext(), R.color.colorEnEspera));
+        }if(misActividades.get(posicion).getEstado().equals("Rechazado")){
+            eav.item.setBackgroundTintList(ContextCompat.getColorStateList(eav.itemView.getContext(), R.color.colorRechazado));
+        }
+
     }
 
     @Override

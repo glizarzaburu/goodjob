@@ -14,15 +14,16 @@
 	
 	$id_usuario = $_GET['id_usuario'];
 	
-	$consulta = $con->prepare("select a.id, concat(Unombre, ' ', Upaterno, ' ', Umaterno) as nombre_completo, titulo, a.fecha_fin, p.estado 
+	$consulta = $con->prepare("select a.id, concat(Unombre, ' ', Upaterno, ' ', Umaterno) as nombre_completo, titulo, a.fecha_fin, p.estado, d.dnombre 
 		from postulacion_actividad p inner join actividad a 
 		on p.id_actividad = a.id inner join usuario u 
 		on u.idUsuario = p.id_usuario 
+		inner join distrito d on d.iddistrito = a.distrito 
 		where p.id_usuario = {$id_usuario};");
 		
 	$consulta->execute();
 	
-	$consulta->bind_result($id, $nombre_completo, $titulo, $fecha_fin, $estado);
+	$consulta->bind_result($id, $nombre_completo, $titulo, $fecha_fin, $estado, $distrito);
 	
 	$actividad = array();
 	
@@ -34,6 +35,7 @@
 		$temp['nombre_completo'] = $nombre_completo;
 		$temp['fecha_fin'] = $fecha_fin;
 		$temp['estado'] = $estado;
+		$temp['distrito'] = $distrito;
 		
 		array_push($actividad, $temp);
 	}
