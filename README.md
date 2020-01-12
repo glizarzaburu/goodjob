@@ -16,26 +16,26 @@ Proyecto con el fin de promover un mejor cuidado del medio ambiente
 
 ## Historias de Usuario
 #### Cachi Ayala
-- [ ] Aceptación/Rechazo de actividad	
-- [ ] Perfil de usuario	
+- [x] Aceptación/Rechazo de actividad	
+- [x] Perfil de usuario	
 - [ ] Mantenimiento de usuarios
 - [ ] Aceptación/Rechazo de producto
 #### Castillo Aycachi
-- [ ] Solicitud de registro como empresa	
-- [ ] Publicar actividad	
-- [ ] Registro de productos canjeados
-- [ ] Canje de puntos	
+- [x] Solicitud de registro como empresa	
+- [x] Publicar actividad	
+- [x] Registro de productos canjeados
+- [x] Canje de puntos	
 - [ ] Reparto de recompensa	
 #### Lizarzaburu Mercado
-- [ ] Inicio de sesión	
-- [ ] Aplicar a actividad
-- [ ] Estado de postulación a actividades	
-- [ ] Detalle de actividad aceptada
+- [x] Inicio de sesión	
+- [x] Aplicar a actividad
+- [x] Estado de postulación a actividades	
+- [x] Detalle de actividad aceptada
 - [ ] Puntuación de compañeros 
 #### Pacheco Bada
-- [ ] Registro como usuario 
-- [ ] Listado de actividades
-- [ ] Aceptación/Rechazo de aplicantes
+- [x] Registro como usuario 
+- [x] Listado de actividades
+- [x] Aceptación/Rechazo de aplicantes
 - [ ] Mantenimiento de actividades	
 - [ ] Insignias y medallas de perfil
 
