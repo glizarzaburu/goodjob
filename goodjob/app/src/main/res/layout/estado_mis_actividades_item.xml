@@ -11,8 +11,8 @@
         android:id="@+id/textItem"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="10dp"
         android:layout_margin="5dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/border_estado_mis_actividades">
 
         <TextView
@@ -36,8 +36,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:textSize="20sp"
             android:textColor="#ffffff"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,9 +49,9 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/end_date"
+            android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#000000"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
 
@@ -70,7 +70,6 @@
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
 
-
         <TextView
             android:id="@+id/tvEstado"
             android:layout_width="wrap_content"
@@ -78,14 +77,12 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            
             android:textColor="#ffffff"
+            android:textSize="20sp"
+
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvFecha" />
-
-
 
 
         <TextView
@@ -95,8 +92,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:textSize="20sp"
             android:textColor="#ffffff"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
 
@@ -108,9 +105,9 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:text="Distrito :"
+            android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#000000"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -121,8 +118,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:textSize="20sp"
             android:textColor="#ffffff"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEstado" />
 
