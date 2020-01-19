@@ -63,3 +63,6 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
+
+# credentials
+credenciales_db_remota.md

@@ -15,8 +15,8 @@
         android:title="@string/title_estado_mis_actividades" />
 
     <item
-        android:id="@+id/navigation_premiun"
+        android:id="@+id/navigation_productos"
         android:icon="@drawable/star"
-        android:title="@string/title_premiun" />
+        android:title="@string/title_productos" />
 
 </menu>

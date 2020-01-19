@@ -16,7 +16,6 @@
         <activity android:name=".activities.SolicitudEmpresaResultadoActivity" />
         <activity android:name=".activities.SolicitudEmpresaActivity" />
         <activity android:name=".activities.PublicarActividadActivity" />
-        <activity android:name=".SuscriptionActivity" />
         <activity android:name=".activities.FormRegisterUserActivity" />
         <activity
             android:name=".activities.LoginActivity"

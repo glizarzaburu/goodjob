@@ -21,7 +21,6 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.goodjob.R;
-import com.example.goodjob.SuscriptionActivity;
 import com.example.goodjob.classes.ValidSession;
 import com.example.goodjob.fragments.HomeFragment;
 import com.example.goodjob.fragments.ListaEmpresasEsperaFragment;
@@ -113,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 case R.id.navigation_profile:
                     selectedFragment = new ProfileFragment();
                     break;
-                case R.id.navigation_premiun:
+                case R.id.navigation_productos:
                     selectedFragment = new ProductosCanjeFragment();
                     break;
                 case R.id.navigation_estado_mis_actividades:

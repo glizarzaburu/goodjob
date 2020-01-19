@@ -3,9 +3,6 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-create database goodjod;
-use goodjod;
-
 CREATE TABLE distrito (
   idDistrito int(11) NOT NULL primary key auto_increment,
   DNombre varchar(150) NOT NULL

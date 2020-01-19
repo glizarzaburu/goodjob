@@ -181,5 +181,6 @@
     <string name="stock">Stock</string>
     <string name="valor">Valor</string>
     <string name="producto_canje">Producto</string>
+    <string name="title_productos">Productos</string>
 
 </resources>
