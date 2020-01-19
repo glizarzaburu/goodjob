@@ -15,9 +15,10 @@
     <color name="fondoscuro">#34495E</color>
     <color name="startblue">#09c6df</color>
     <color name="endblue">#0bcce6</color>
-    <color name="colorAceptado">#c4eeca</color>
-    <color name="colorRechazado">#EF5350</color>
-    <color name="colorEnEspera">#f7fbd1</color>
+    <color name="colorAceptado">#4CAF50</color>
+    <color name="colorRechazado">#F44336</color>
+    <color name="colorEnEspera">#979900</color>
+
 
 
 </resources>
