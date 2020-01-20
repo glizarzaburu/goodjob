@@ -14,7 +14,7 @@
     
     $id = $_GET['id_empresa'];
 
-    $consulta_string = "update empresa set estado = 1 and password = 'somosGJ' where idEmpresa = $id";
+    $consulta_string = "update empresa set estado = 1, password = 'somosGJ' where idEmpresa = $id";
 	
 	if (mysqli_query($con, $consulta_string))
 	{

@@ -18,7 +18,7 @@
     $consulta = $con->prepare("SELECT idEmpresa, ErazonSocial, Eruc, Ececular, Edireccion, EfechaRegistro,
     EcodigoPostal, ecorreo, EnombreComercial, EnumeroActividades, DNombre, estado from empresa e 
     INNER JOIN distrito d ON e.idDistrito = d.idDistrito WHERE 
-    Eruc = '$ruc' AND e.password = '$pass'");
+    Eruc = '$ruc' AND e.password = '$pass' AND estado = 1");
 		
 	$consulta->execute();
 	
