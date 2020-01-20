@@ -1,24 +1,36 @@
 package com.example.goodjob.fragments;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.goodjob.R;
 import com.example.goodjob.classes.Actividad;
+import com.example.goodjob.classes.ValidSession;
 import com.spark.submitbutton.SubmitButton;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
 
 public class SolicitudActividadesEsperaDetalleFragment extends Fragment {
 
     private Actividad actividad;
-    /* TODO 2.1 aqui declaras los views del layout.
-        Ejemplo: private TextView fechaRegistro;
-    * */
-
     private TextView titulo;
     private TextView descripcion;
     private TextView empresa;
@@ -28,11 +40,8 @@ public class SolicitudActividadesEsperaDetalleFragment extends Fragment {
     private TextView participantes_reque;
     private TextView tip_recompensa;
     private TextView trecompensa;
-    SubmitButton submitButton;
-
-    public SolicitudActividadesEsperaDetalleFragment() {
-    }
-
+    private ImageView imagen;
+    private Button aceptar, rechazar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,18 +51,16 @@ public class SolicitudActividadesEsperaDetalleFragment extends Fragment {
         Bundle bundle = this.getArguments();
         if (bundle != null)
             actividad = bundle.getParcelable("actividad");
+
         mapearViews(v);
         mostrarDatos(actividad);
+        aceptar();
+        rechazar();
+
         return v;
-
-
     }
 
     private void mapearViews(View v) {
-        /* TODO 2.2 aqui haces los findViewById();
-            Ejemplo: fechaRegistro = v.findViewById(R.id.tvFechaRegistro);
-        * */
-
         titulo = v.findViewById(R.id.tvTitledetespera);
         descripcion = v.findViewById(R.id.tvDescriptiondetespera);
         empresa = v.findViewById(R.id.tvEmpresaNombre);
@@ -63,15 +70,12 @@ public class SolicitudActividadesEsperaDetalleFragment extends Fragment {
         participantes_reque = v.findViewById(R.id.tvParticipantesRequeridos);
         tip_recompensa = v.findViewById(R.id.tvRecompensaDet);
         trecompensa = v.findViewById(R.id.tvPuntosDet);
-
-
+        imagen = v.findViewById(R.id.imgEsperaDet);
+        aceptar = v.findViewById(R.id.btnAceptarActividad);
+        rechazar = v.findViewById(R.id.btnRechazrActividad);
     }
 
     private void mostrarDatos(Actividad a) {
-        /* TODO 2.3 y aca haces los setText para mostrar la info en el layout.
-            Ejemplo: fechaRegistro.setText(a.getCreationDate());
-        * */
-
         empresa.setText(a.getAuthor());
         descripcion.setText(a.getDescription());
         titulo.setText(a.getTitle());
@@ -80,13 +84,91 @@ public class SolicitudActividadesEsperaDetalleFragment extends Fragment {
         distrito.setText(a.getDistrito());
         tip_recompensa.setText(a.getRewardType());
         participantes_reque.setText(actividad.getRequiredParticipants() + " personas");
-        trecompensa.setText(" "+actividad.getReward());
+        trecompensa.setText(" " + actividad.getReward());
 
-
+        ImageRequest request = new ImageRequest(ValidSession.IMAGENES_ACTIVIDADES + actividad.getPhoto(), new Response.Listener<Bitmap>() {
+            @Override
+            public void onResponse(Bitmap response) {
+                imagen.setImageBitmap(response);
+            }
+        }, 0, 0, ImageView.ScaleType.CENTER_CROP, null, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+        Volley.newRequestQueue(getContext()).add(request);
     }
 
-    /* TODO 2.4 este solo es un recordatorio para que borres todos los TODO(2.0 - 2.4)
-        una vez termines.
-     * */
+    private void aceptar() {
+        aceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                String url = ValidSession.IP + "/ws_aceptar_actividad.php?id_actividad=" + actividad.getId();
+                OkHttpClient client = new OkHttpClient();
+                okhttp3.Request request = new okhttp3.Request.Builder()
+                        .url(url)
+                        .build();
 
+                client.newCall(request).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    @Override
+                    public void onResponse(@NotNull Call call, @NotNull okhttp3.Response response) throws IOException {
+                        if (response.isSuccessful()) {
+                            final String _response = response.body().string();
+                            getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(getContext(), _response, Toast.LENGTH_SHORT).show();
+                                    getFragmentManager().beginTransaction()
+                                            .replace(R.id.containerFragments, new SolicitudActividadesEsperaFragment())
+                                            .commit();
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+    private void rechazar() {
+        rechazar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                String url = ValidSession.IP + "/ws_rechazar_actividad.php?id_actividad=" + actividad.getId();
+                OkHttpClient client = new OkHttpClient();
+                okhttp3.Request request = new okhttp3.Request.Builder()
+                        .url(url)
+                        .build();
+
+                client.newCall(request).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    @Override
+                    public void onResponse(@NotNull Call call, @NotNull okhttp3.Response response) throws IOException {
+                        if (response.isSuccessful()) {
+                            final String _response = response.body().string();
+                            getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(getContext(), _response, Toast.LENGTH_SHORT).show();
+                                    getFragmentManager().beginTransaction()
+                                            .replace(R.id.containerFragments, new SolicitudActividadesEsperaFragment())
+                                            .commit();
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+        });
+    }
 }

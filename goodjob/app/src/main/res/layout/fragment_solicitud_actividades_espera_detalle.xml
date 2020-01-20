@@ -8,17 +8,10 @@
     android:orientation="vertical"
     tools:context=".fragments.SolicitudActividadesEsperaDetalleFragment">
 
-    <!-- TODO 2.0 diseñar la pantalla del detalle de la actividad a ser publicada.
-        Los unicos IDs que me importan son de los botones para aceptar y rechazar
-        la actividad. btnAceptarActividad y btnRechazarActividad respectivamente.
-        Los demás IDs eres libre.
-        -->
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg1">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -313,8 +306,8 @@
                     android:id="@+id/btnAceptarActividad"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="Aceptar"
                     android:background="@drawable/btn_ui"
+                    android:text="Aceptar"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.069"
@@ -324,8 +317,8 @@
                     android:id="@+id/btnRechazrActividad"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="Rechazar"
                     android:background="@drawable/btn_ui"
+                    android:text="Rechazar"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
             </android.support.constraint.ConstraintLayout>
