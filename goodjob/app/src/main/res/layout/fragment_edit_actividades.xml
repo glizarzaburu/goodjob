@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    tools:context=".fragments.EditActividadesFragment">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="297dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="74dp"
+        android:textColor="#778d04"
+        android:textSize="30sp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="585dp"
+        android:text="PRUEBA DE EDICION" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="342dp"
+        android:layout_height="182dp"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/border_estado_mis_actividades"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginBottom="352dp"
+        android:text="TextView" />
+
+    <ImageButton
+        android:id="@+id/tvConfirmarEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="181dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="204dp"
+        android:layout_marginBottom="105dp"
+        android:src="@drawable/confirmar" />
+
+    <ImageButton
+        android:id="@+id/tvCancelarEdit"
+        android:layout_width="203dp"
+        android:layout_height="176dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="105dp"
+        android:src="@drawable/cancelar" />
+
+
+</RelativeLayout>
