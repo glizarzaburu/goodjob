@@ -22,10 +22,11 @@ import android.widget.Toast;
 
 import com.example.goodjob.R;
 import com.example.goodjob.classes.ValidSession;
+import com.example.goodjob.fragments.EstadoMisActividadesFragment;
+import com.example.goodjob.fragments.EstadoMisPublicacionesFragment;
 import com.example.goodjob.fragments.HomeFragment;
 import com.example.goodjob.fragments.ListaEmpresasEsperaFragment;
 import com.example.goodjob.fragments.ListadoActividadEmpresaEstadoFragment;
-import com.example.goodjob.fragments.PreMyActivitesFragment;
 import com.example.goodjob.fragments.ProductoEsperaFragment;
 import com.example.goodjob.fragments.ProductosCanjeFragment;
 import com.example.goodjob.fragments.ProfileFragment;
@@ -119,8 +120,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     if (ValidSession.usuarioLogueado == null && ValidSession.empresaLogueada == null) {
                         cuadroDialogo();
                         return true;
+                    } else if (ValidSession.empresaLogueada != null) {
+                        selectedFragment = new EstadoMisPublicacionesFragment();
+                    } else {
+                        selectedFragment = new EstadoMisActividadesFragment();
                     }
-                    selectedFragment = new PreMyActivitesFragment();
                     break;
             }
             cargarFragment(selectedFragment);

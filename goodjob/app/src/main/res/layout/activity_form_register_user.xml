@@ -36,17 +36,6 @@
         android:layout_marginTop="-5dp"
         android:src="@drawable/circletransparant" />
 
-    <ImageView
-        android:id="@+id/circle3"
-        android:layout_width="182dp"
-        android:layout_height="182dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="-80dp"
-        android:layout_marginBottom="-30dp"
-        android:src="@drawable/circle" />
-
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -171,11 +160,12 @@
             </android.support.v7.widget.CardView>
 
             <LinearLayout
+                android:id="@+id/botones"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cv"
-                android:layout_alignLeft="@+id/cv"
-                android:layout_alignRight="@+id/cv"
+                android:layout_alignStart="@+id/cv"
+                android:layout_alignEnd="@+id/cv"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="-30dp"
                 android:layout_marginRight="35dp"
@@ -201,6 +191,27 @@
                     android:textColor="@color/fondoscuro" />
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/formar_parte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/botones"
+                android:layout_marginTop="@dimen/default_margin_top"
+                android:text="@string/goodjob_formar_parte"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/solicitar_cuenta_empresa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/formar_parte"
+                android:layout_centerHorizontal="true"
+                android:text="@string/goodjob_formar_parte_2"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:textStyle="bold" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

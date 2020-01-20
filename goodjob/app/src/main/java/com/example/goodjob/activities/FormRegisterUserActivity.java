@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -24,6 +25,7 @@ import java.util.Map;
 public class FormRegisterUserActivity extends AppCompatActivity {
     private Button btnRegister, btnCancel;
     private EditText correo, password, nombre, paterno, materno;
+    private TextView solicitar_cuenta_empresa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +42,14 @@ public class FormRegisterUserActivity extends AppCompatActivity {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), SelectedUserActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
+            }
+        });
+        solicitar_cuenta_empresa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(FormRegisterUserActivity.this, SolicitudEmpresaActivity.class));
             }
         });
         Certificado.handleSSLHandshake();
@@ -55,6 +63,7 @@ public class FormRegisterUserActivity extends AppCompatActivity {
         password = findViewById(R.id.etPasswordRegistro);
         btnRegister = findViewById(R.id.btnRegister);
         btnCancel = findViewById(R.id.btn_Cancel);
+        solicitar_cuenta_empresa = findViewById(R.id.solicitar_cuenta_empresa);
     }
 
     private void CargarWebServiceRegistrarUser() {
