@@ -245,7 +245,7 @@ public class DetailsAndApplyActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+
             }
         });
         Volley.newRequestQueue(getApplicationContext()).add(stringRequest);

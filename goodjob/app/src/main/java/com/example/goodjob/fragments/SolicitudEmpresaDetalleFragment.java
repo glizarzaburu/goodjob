@@ -6,12 +6,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.goodjob.R;
 import com.example.goodjob.classes.Empresa;
+import com.example.goodjob.classes.ValidSession;
 
 public class SolicitudEmpresaDetalleFragment extends Fragment {
 
@@ -24,6 +31,8 @@ public class SolicitudEmpresaDetalleFragment extends Fragment {
     private TextView codigoPostal;
     private TextView distrito;
     private TextView direccion;
+    private Button aceptar;
+    private TextView rechazar;
 
     public SolicitudEmpresaDetalleFragment() {
     }
@@ -38,6 +47,53 @@ public class SolicitudEmpresaDetalleFragment extends Fragment {
             empresa = bundle.getParcelable("empresa");
         mapearViews(v);
         mostrarDatos(empresa);
+
+        aceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                String url = ValidSession.IP + "/ws_aceptar_empresa.php?id_empresa=" + empresa.getId();
+                StringRequest request = new StringRequest(Request.Method.PUT, url, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(view.getContext(), response, Toast.LENGTH_SHORT).show();
+                        getFragmentManager().beginTransaction()
+                                .replace(R.id.containerFragments, new ListaEmpresasEsperaFragment())
+                                .commit();
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.println(error.getMessage());
+                    }
+                });
+                request.setShouldRetryServerErrors(true);
+                Volley.newRequestQueue(view.getContext()).add(request);
+            }
+        });
+
+        rechazar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                String url = ValidSession.IP + "/ws_rechazar_empresa.php?id_empresa=" + empresa.getId();
+                StringRequest request = new StringRequest(Request.Method.PUT, url, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(view.getContext(), response, Toast.LENGTH_SHORT).show();
+                        getFragmentManager().beginTransaction()
+                                .replace(R.id.containerFragments, new ListaEmpresasEsperaFragment())
+                                .commit();
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.println(error.getMessage());
+                    }
+                });
+                request.setShouldRetryServerErrors(true);
+                Volley.newRequestQueue(view.getContext()).add(request);
+            }
+        });
+
         return v;
     }
 
@@ -50,6 +106,8 @@ public class SolicitudEmpresaDetalleFragment extends Fragment {
         codigoPostal = v.findViewById(R.id.tvCodigoPostal);
         distrito = v.findViewById(R.id.tvDistrito);
         direccion = v.findViewById(R.id.tvDireccion);
+        aceptar = v.findViewById(R.id.aceptar_empresa_button);
+        rechazar = v.findViewById(R.id.rechazar_empresa_button);
     }
 
     private void mostrarDatos(Empresa e) {

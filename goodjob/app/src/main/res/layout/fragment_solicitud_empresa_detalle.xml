@@ -19,31 +19,31 @@
             android:layout_height="wrap_content"
             android:text="Detalle de"
             android:textColor="#FF9800"
-            android:textSize="24dp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
             android:text=" la empresa"
             android:textColor="@color/colorPrimary"
-            android:textSize="24dp"
+            android:textSize="24sp"
             android:textStyle="bold" />
     </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="400dp"
-                android:layout_height="600dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:orientation="vertical"
                 android:padding="20sp">
@@ -60,8 +60,8 @@
                         android:id="@+id/tvRazon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Razon Social :"
                         android:layout_weight="1"
+                        android:text="Razon Social :"
                         android:textColor="@android:color/black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -269,15 +269,27 @@
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/btnMoreInfo"
+                    android:id="@+id/aceptar_empresa_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/buttonstyle"
-                    android:text="Postular Actividad"
+                    android:paddingStart="32dp"
+                    android:paddingEnd="32dp"
+                    android:text="Aceptar"
                     android:textColor="#fff"
-                    android:textSize="15dp" />
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/rechazar_empresa_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:text="Rechazar"
+                    android:textColor="#000"
+                    android:textSize="20sp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
