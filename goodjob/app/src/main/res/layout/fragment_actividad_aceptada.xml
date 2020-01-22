@@ -158,13 +158,11 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rvUsuariosParticipantes"
-                android:layout_width="340dp"
+                android:layout_width="381dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
-
-
                 android:layout_marginEnd="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="10dp"
