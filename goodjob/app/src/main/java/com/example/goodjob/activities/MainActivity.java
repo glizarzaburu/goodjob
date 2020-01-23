@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_productos_rechazados) {
             //TODO: refactorizar producto espera fragment para que liste acà tmb
         } else if (id == R.id.nav_actividades_registro) {
-
+            startActivity(new Intent(getApplication(), PublicarActividadActivity.class));
         } else if (id == R.id.nav_actividades_espera) {
             cargarFragmentActividadesEmpresa(0);
         } else if (id == R.id.nav_actividades_aceptadas) {

@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -23,11 +24,19 @@ import com.android.volley.toolbox.Volley;
 import com.example.goodjob.R;
 import com.example.goodjob.classes.Actividad;
 import com.example.goodjob.classes.ValidSession;
+import com.example.goodjob.fragments.DetalleMiPublicacionFragment;
 import com.example.goodjob.util.Certificado;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
 
 public class DetailsAndApplyActivity extends AppCompatActivity {
 
@@ -237,17 +246,28 @@ public class DetailsAndApplyActivity extends AppCompatActivity {
     private void incrementarParticipantes(final Integer cantidad, Integer idActividad) {
         String url = ValidSession.IP + "/ws_incrementarParticipantesPostulacion.php?cantidad=" + cantidad + "&id_actividad=" + idActividad;
 
-        StringRequest stringRequest = new StringRequest(Request.Method.PUT, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                currentParticipants.setText("De momento hay " + cantidad + " postulantes");
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
+        OkHttpClient client = new OkHttpClient();
+        okhttp3.Request request = new okhttp3.Request.Builder()
+                .url(url)
+                .build();
 
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull okhttp3.Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    DetailsAndApplyActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            currentParticipants.setText("De momento hay " + cantidad + " postulantes");
+                        }
+                    });
+                }
             }
         });
-        Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
     }
 }

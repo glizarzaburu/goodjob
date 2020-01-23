@@ -22,12 +22,18 @@ import com.example.goodjob.classes.ActividadAceptada;
 import com.example.goodjob.classes.UsuarioPostulante;
 import com.example.goodjob.classes.ValidSession;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
 
 public class DetalleMiPublicacionFragment extends Fragment implements UsuarioPostulanteAdapter.OnUsuarioPostulanteListener {
 
@@ -150,22 +156,35 @@ public class DetalleMiPublicacionFragment extends Fragment implements UsuarioPos
         String url = ValidSession.IP + "/ws_aceptarPostulante.php?id_usuario=" + postulantes.get(posicion).getId()
                 + "&id_actividad=" + idActividad;
 
-        StringRequest stringRequest = new StringRequest(Request.Method.PUT, url, new Response.Listener<String>() {
+        OkHttpClient client = new OkHttpClient();
+        okhttp3.Request request = new okhttp3.Request.Builder()
+                .url(url)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onResponse(String response) {
-                Fragment detalle = new DetalleMiPublicacionFragment();
-                Bundle bundle = new Bundle();
-                bundle.putInt("id", idActividad);
-                detalle.setArguments(bundle);
-                getFragmentManager().beginTransaction().replace(R.id.containerFragments, detalle).commit();
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                e.printStackTrace();
             }
-        }, new Response.ErrorListener() {
+
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+            public void onResponse(@NotNull Call call, @NotNull okhttp3.Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Fragment detalle = new DetalleMiPublicacionFragment();
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("id", idActividad);
+                            detalle.setArguments(bundle);
+                            getFragmentManager().beginTransaction()
+                                    .replace(R.id.containerFragments, detalle)
+                                    .commit();
+                        }
+                    });
+                }
             }
         });
-        Volley.newRequestQueue(getContext()).add(stringRequest);
     }
 
     @Override
@@ -173,22 +192,35 @@ public class DetalleMiPublicacionFragment extends Fragment implements UsuarioPos
         String url = ValidSession.IP + "/ws_rechazarPostulante.php?id_usuario=" + postulantes.get(posicion).getId()
                 + "&id_actividad=" + idActividad;
 
-        StringRequest stringRequest = new StringRequest(Request.Method.PUT, url, new Response.Listener<String>() {
+        OkHttpClient client = new OkHttpClient();
+        okhttp3.Request request = new okhttp3.Request.Builder()
+                .url(url)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onResponse(String response) {
-                Fragment detalle = new DetalleMiPublicacionFragment();
-                Bundle bundle = new Bundle();
-                bundle.putInt("id", idActividad);
-                detalle.setArguments(bundle);
-                getFragmentManager().beginTransaction().replace(R.id.containerFragments, detalle).commit();
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                e.printStackTrace();
             }
-        }, new Response.ErrorListener() {
+
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+            public void onResponse(@NotNull Call call, @NotNull okhttp3.Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Fragment detalle = new DetalleMiPublicacionFragment();
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("id", idActividad);
+                            detalle.setArguments(bundle);
+                            getFragmentManager().beginTransaction()
+                                    .replace(R.id.containerFragments, detalle)
+                                    .commit();
+                        }
+                    });
+                }
             }
         });
-        Volley.newRequestQueue(getContext()).add(stringRequest);
     }
 
     @Override
