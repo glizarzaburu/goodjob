@@ -51,20 +51,20 @@ public class SolicitudProductoDetalleFragment extends Fragment {
     }
 
     private void mapearViews(View view) {
-//        producto = view.findViewById(R.id.tvNombreProducto);
-//        empresa = view.findViewById(R.id.tvEmpresaProducto);
-//        stock = view.findViewById(R.id.tvStockProducto);
-//        valor = view.findViewById(R.id.tvValorProducto);
-//        lugarCanje = view.findViewById(R.id.tvLugarCanjeProducto);
-//        imagen = view.findViewById(R.id.imgFotoProducto);
-//        aceptar = view.findViewById(R.id.btnAceptarProducto);
-//        rechazar = view.findViewById(R.id.btnRechazarProducto);
+        producto = view.findViewById(R.id.tvNombreProducto);
+        empresa = view.findViewById(R.id.tvEmpresaProducto);
+        stock = view.findViewById(R.id.tvStockProducto);
+        valor = view.findViewById(R.id.tvValorProducto);
+        lugarCanje = view.findViewById(R.id.tvLugarCanjeProducto);
+        imagen = view.findViewById(R.id.imgFotoProducto);
+        aceptar = view.findViewById(R.id.btnAceptarProducto);
+        rechazar = view.findViewById(R.id.btnRechazarProducto);
     }
 
     private void mostrarDatos(SolicitudProducto p) {
         producto.setText(p.getNombre());
         empresa.setText(p.getEmpresa());
-        stock.setText(p.getStock());
+        stock.setText(p.getStock().toString());
         valor.setText(p.getValor().toString());
         lugarCanje.setText(p.getLugarCanje());
         ImageRequest request = new ImageRequest(ValidSession.IMAGENES_PRODUCTOS + sp.getImagenUrl(), new Response.Listener<Bitmap>() {

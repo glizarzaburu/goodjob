@@ -146,7 +146,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tvEmpresaProdcuto"
+                        android:id="@+id/tvEmpresaProducto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TextView"
@@ -173,7 +173,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tvLugarCanjeProdcuto"
+                        android:id="@+id/tvLugarCanjeProducto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TextView"
@@ -186,7 +186,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/btnAceptarProductor"
+                android:id="@+id/btnAceptarProducto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
