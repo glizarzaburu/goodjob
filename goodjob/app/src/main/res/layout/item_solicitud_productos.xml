@@ -1,84 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="@dimen/default_margin_bottom"
+    android:background="#f4fcf6"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_producto_empresa"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Empresa :"
-        app:layout_constraintBottom_toTopOf="@+id/tv_producto_nombre"
-        app:layout_constraintEnd_toStartOf="@+id/tv_producto_empresa_value"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="8dp"
+        android:background="@drawable/border_estado_mis_actividades"
+        android:paddingBottom="@dimen/default_margin_bottom">
 
-    <TextView
-        android:id="@+id/tv_producto_nombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Producto :"
-        app:layout_constraintBottom_toTopOf="@+id/tv_producto_valor"
-        app:layout_constraintEnd_toStartOf="@+id/tv_producto_nombre_value"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_producto_empresa" />
+        <TextView
+            android:id="@+id/tv_producto_empresa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin_left"
+            android:layout_marginTop="@dimen/default_margin_top"
+            android:text="Empresa :"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_producto_valor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/valor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tv_producto_valor_value"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_producto_nombre" />
+        <TextView
+            android:id="@+id/tv_producto_empresa_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/default_margin_top"
+            android:layout_marginEnd="@dimen/default_margin_right"
+            tools:text="Goodjob"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/tv_producto_empresa_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tv_producto_empresa"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Goodjob" />
+        <TextView
+            android:id="@+id/tv_producto_nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_producto_empresa"
+            android:layout_marginStart="@dimen/default_margin_left"
+            android:layout_marginTop="13dp"
+            android:text="Producto :"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_producto_nombre_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tv_producto_nombre"
-        app:layout_constraintTop_toBottomOf="@+id/tv_producto_empresa_value"
-        tools:text="20" />
+        <TextView
+            android:id="@+id/tv_producto_nombre_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_producto_empresa_value"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="11dp"
+            android:text="empresa publicante"
+            android:textSize="20sp"
+            tools:text="20"/>
 
-    <TextView
-        android:id="@+id/tv_producto_valor_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tv_producto_valor"
-        tools:text="500" />
+        <TextView
+            android:id="@+id/tv_producto_valor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_producto_nombre"
+            android:layout_marginStart="@dimen/default_margin_left"
+            android:layout_marginTop="@dimen/default_margin_top"
+            android:text="@string/valor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_producto_valor_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_producto_nombre_value"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/default_margin_top"
+            android:layout_marginEnd="@dimen/default_margin_right"
+            android:text="fecha de registro"
+            android:textSize="20sp"
+            tools:text="500"/>
+    </RelativeLayout>
+</LinearLayout>

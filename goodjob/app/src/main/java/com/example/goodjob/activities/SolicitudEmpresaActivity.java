@@ -42,6 +42,7 @@ public class SolicitudEmpresaActivity extends AppCompatActivity {
     final int RUC_LONGITUD = 11;
     final int DIRECCION_TOPE_LONGITUD = 150;
     final int CORREO_TOPE_LONGITUD = 50;
+    final int TELEFONO__TOPE_LONGITUD = 9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -168,6 +169,10 @@ public class SolicitudEmpresaActivity extends AppCompatActivity {
         if (telefono.trim().length() == CAMPO_VACIO) {
             tilTelefono.setError("Debe ingresar un número telefonico");
             return false;
+        } else if (telefono.trim().length() > TELEFONO__TOPE_LONGITUD) {
+            tilTelefono.setError("El teléfono consta de 9 digitos");
+            return false;
+
         } else if (!telefono.trim().matches("^[0-9]+$")) {
             tilTelefono.setError("Ingrese un telefono válido");
             return false;
@@ -223,6 +228,7 @@ public class SolicitudEmpresaActivity extends AppCompatActivity {
             tilCorreo.setError("Ingrese un correo válido");
             return false;
         }
+
         tilCorreo.setError(null);
         return true;
     }
