@@ -126,6 +126,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/activity_vertical_margin"
                         app:errorEnabled="true"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="9"
                         app:hintTextAppearance="@style/publicar_actividad_hint_appearance">
 
                         <EditText
