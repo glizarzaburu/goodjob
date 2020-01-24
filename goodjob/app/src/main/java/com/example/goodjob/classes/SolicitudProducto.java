@@ -7,6 +7,15 @@ public class SolicitudProducto {
     private Double valor;
     private String empresa;
     private String lugarCanje;
+    private String imagenUrl;
+
+    public String getImagenUrl() {
+        return imagenUrl;
+    }
+
+    public void setImagenUrl(String imagenUrl) {
+        this.imagenUrl = imagenUrl;
+    }
 
     public Integer getStock() {
         return stock;
