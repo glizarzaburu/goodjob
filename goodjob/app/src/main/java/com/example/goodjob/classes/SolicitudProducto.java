@@ -1,6 +1,9 @@
 package com.example.goodjob.classes;
 
-public class SolicitudProducto {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class SolicitudProducto implements Parcelable {
     private Integer id;
     private String nombre;
     private Integer stock;
@@ -8,6 +11,40 @@ public class SolicitudProducto {
     private String empresa;
     private String lugarCanje;
     private String imagenUrl;
+
+    protected SolicitudProducto(Parcel in) {
+        if (in.readByte() == 0) {
+            id = null;
+        } else {
+            id = in.readInt();
+        }
+        nombre = in.readString();
+        if (in.readByte() == 0) {
+            stock = null;
+        } else {
+            stock = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            valor = null;
+        } else {
+            valor = in.readDouble();
+        }
+        empresa = in.readString();
+        lugarCanje = in.readString();
+        imagenUrl = in.readString();
+    }
+
+    public static final Creator<SolicitudProducto> CREATOR = new Creator<SolicitudProducto>() {
+        @Override
+        public SolicitudProducto createFromParcel(Parcel in) {
+            return new SolicitudProducto(in);
+        }
+
+        @Override
+        public SolicitudProducto[] newArray(int size) {
+            return new SolicitudProducto[size];
+        }
+    };
 
     public String getImagenUrl() {
         return imagenUrl;
@@ -63,5 +100,36 @@ public class SolicitudProducto {
 
     public void setEmpresa(String empresa) {
         this.empresa = empresa;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        if (id == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(id);
+        }
+        parcel.writeString(nombre);
+        if (stock == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(stock);
+        }
+        if (valor == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeDouble(valor);
+        }
+        parcel.writeString(empresa);
+        parcel.writeString(lugarCanje);
+        parcel.writeString(imagenUrl);
     }
 }
