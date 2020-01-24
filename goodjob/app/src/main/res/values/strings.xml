@@ -176,7 +176,7 @@
     <string name="empresa_fecha_registrada">Solicitado</string>
     <string name="actividades_solicitud">Solicitudes de Actividades</string>
     <string name="stock">Stock</string>
-    <string name="valor">Valor</string>
+    <string name="valor">Valor :</string>
     <string name="producto_canje">Producto</string>
     <string name="title_productos">Productos</string>
 

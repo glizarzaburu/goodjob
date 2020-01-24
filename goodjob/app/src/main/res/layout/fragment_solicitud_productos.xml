@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
-            android:text="de productos"
+            android:text="de Productos"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
             android:textSize="24dp" />

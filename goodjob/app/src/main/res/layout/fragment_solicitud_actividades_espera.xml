@@ -6,18 +6,37 @@
     android:orientation="vertical"
     tools:context=".fragments.SolicitudActividadesEsperaFragment">
 
-    <TextView
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/default_margin_top"
-        android:layout_marginBottom="@dimen/default_margin_bottom"
-        android:gravity="center_horizontal"
-        android:text="@string/actividades_solicitud"
-        android:textSize="24sp" />
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Solicitud"
+            android:textStyle="bold"
+            android:textColor="#FF9800"
+            android:textSize="24dp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="de Actividades"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="24dp" />
+
+
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvSolicitudActividadesEspera"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </LinearLayout>

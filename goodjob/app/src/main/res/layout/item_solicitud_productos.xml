@@ -22,7 +22,6 @@
             android:layout_marginTop="@dimen/default_margin_top"
             android:text="Empresa :"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
             android:textStyle="bold" />
 
         <TextView
@@ -41,9 +40,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_producto_empresa"
             android:layout_marginStart="@dimen/default_margin_left"
-            android:layout_marginTop="@dimen/default_margin_top"
+            android:layout_marginTop="13dp"
             android:text="Producto :"
-            android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -68,7 +66,6 @@
             android:layout_marginTop="@dimen/default_margin_top"
             android:text="@string/valor"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
             android:textStyle="bold" />
 
         <TextView
