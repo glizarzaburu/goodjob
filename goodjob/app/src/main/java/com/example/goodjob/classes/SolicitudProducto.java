@@ -12,6 +12,9 @@ public class SolicitudProducto implements Parcelable {
     private String lugarCanje;
     private String imagenUrl;
 
+    public SolicitudProducto() {
+    }
+
     protected SolicitudProducto(Parcel in) {
         if (in.readByte() == 0) {
             id = null;

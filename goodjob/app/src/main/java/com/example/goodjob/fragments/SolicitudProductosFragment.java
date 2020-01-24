@@ -18,6 +18,7 @@ import com.example.goodjob.R;
 import com.example.goodjob.adapter.SolicitudProductoAdapter;
 import com.example.goodjob.classes.SolicitudProducto;
 import com.example.goodjob.classes.ValidSession;
+import com.example.goodjob.interfaces.OnSolicitudProductoListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,7 +30,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SolicitudProductosFragment extends Fragment {
+public class SolicitudProductosFragment extends Fragment implements OnSolicitudProductoListener {
 
     private RecyclerView rvSolicitudProductos;
     private List<SolicitudProducto> productos;
@@ -89,8 +90,19 @@ public class SolicitudProductosFragment extends Fragment {
     }
 
     private void cargarAdapter() {
-        SolicitudProductoAdapter adapter = new SolicitudProductoAdapter(productos);
+        SolicitudProductoAdapter adapter = new SolicitudProductoAdapter(productos, this);
         rvSolicitudProductos.setAdapter(adapter);
     }
 
+    @Override
+    public void onSolicitudProductoClicl(int posicion) {
+        SolicitudProducto sp = productos.get(posicion);
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("producto", sp);
+        Fragment detalle = new SolicitudProductoDetalleFragment();
+        detalle.setArguments(bundle);
+        getFragmentManager().beginTransaction()
+                .replace(R.id.containerFragments, detalle)
+                .commit();
+    }
 }
