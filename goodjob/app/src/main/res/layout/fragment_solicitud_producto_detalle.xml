@@ -17,15 +17,15 @@
             android:layout_height="250dp"
             android:background="#00FF99"
             android:orientation="vertical"
-            android:padding="11dp">
+            android:padding="26dp">
 
             <ImageView
                 android:id="@+id/imgFotoProducto"
-                android:layout_width="340dp"
+                android:layout_width="350dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/border_imageview"
-                android:src="@drawable/ic_cara"/>
+                android:src="@drawable/ic_cara" />
         </LinearLayout>
 
     </RelativeLayout>
@@ -57,7 +57,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Nombre del Producto :"
                         android:textColor="@android:color/black"
                         android:textSize="20sp"
@@ -191,7 +191,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/buttonstyle"
-                android:text="Postular Actividad"
+                android:text="Aceptar Producto"
                 android:textSize="15dp"
                 android:textColor="#fff"
                 android:layout_marginTop="15dp"/>
@@ -202,7 +202,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/buttonrechazar"
-                android:text="Postular Actividad"
+                android:text="Rechazar Producto"
                 android:textSize="15dp"
                 android:textColor="#fff"
                 android:layout_marginTop="15dp"/>
