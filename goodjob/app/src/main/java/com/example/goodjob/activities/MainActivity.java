@@ -32,6 +32,7 @@ import com.example.goodjob.fragments.ProductosCanjeFragment;
 import com.example.goodjob.fragments.ProfileFragment;
 import com.example.goodjob.fragments.RegistrarProductoFragment;
 import com.example.goodjob.fragments.SolicitudActividadesEsperaFragment;
+import com.example.goodjob.fragments.SolicitudProductosFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -227,7 +228,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_solicitud_actividades) {
             cargarFragment(new SolicitudActividadesEsperaFragment());
         } else if (id == R.id.nav_solicitud_productos) {
-
+            cargarFragment(new SolicitudProductosFragment());
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

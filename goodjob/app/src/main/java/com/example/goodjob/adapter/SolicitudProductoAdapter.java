@@ -44,7 +44,7 @@ public class SolicitudProductoAdapter extends RecyclerView.Adapter<SolicitudProd
 
         private TextView nombre, valor, empresa;
 
-        public SolicitudProductoViewHolder(@NonNull View itemView) {
+        private SolicitudProductoViewHolder(@NonNull View itemView) {
             super(itemView);
 
             nombre = itemView.findViewById(R.id.tv_producto_nombre_value);
