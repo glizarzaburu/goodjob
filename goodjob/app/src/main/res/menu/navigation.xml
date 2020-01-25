@@ -14,10 +14,10 @@
         android:icon="@drawable/ic_add_to_activity_black_24dp"
         android:title="@string/title_estado_mis_actividades" />
 
-    <!-- TODO: 1.3 si puedes cambiale el icono por uno que aparente de productos-->
+    
     <item
         android:id="@+id/navigation_productos"
-        android:icon="@drawable/star"
+        android:icon="@drawable/icono_product"
         android:title="@string/title_productos" />
 
 </menu>
