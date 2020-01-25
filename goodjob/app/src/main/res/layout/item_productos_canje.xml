@@ -21,7 +21,7 @@
             <ImageView
                 android:id="@+id/ivProductoCanjeImagen"
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="180dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"

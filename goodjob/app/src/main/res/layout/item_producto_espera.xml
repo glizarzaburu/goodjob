@@ -27,7 +27,7 @@
 
         <TextView
             android:id="@+id/tvProductoEsperaNombre"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="30dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -51,11 +51,11 @@
 
         <TextView
             android:id="@+id/tvProductoEsperaStock"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="30dp"
             android:layout_below="@+id/tvProductoEsperaNombre"
-            android:layout_marginStart="235dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="192dp"
+            android:layout_marginTop="20dp"
             android:text="valor del stock"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -76,11 +76,11 @@
 
         <TextView
             android:id="@+id/tvProductoEsperaValor"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="30dp"
             android:layout_below="@+id/tvProductoEsperaStock"
-            android:layout_marginStart="235dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="192dp"
+            android:layout_marginTop="12dp"
             android:text="valor del valor"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -101,11 +101,11 @@
 
         <TextView
             android:id="@+id/tvProductoEsperaFechaRegistro"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="30dp"
             android:layout_below="@+id/tvProductoEsperaValor"
-            android:layout_marginStart="235dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="192dp"
+            android:layout_marginTop="12dp"
             android:text="valor del stock"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
