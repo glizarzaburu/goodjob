@@ -53,7 +53,16 @@ public class ProfileFragment extends Fragment {
             return view;
 
         consultarPerfilUsuario(idUsuario);
+        botonCerrarSesion();
 
+        if (ValidSession.empresaLogueada != null && idUsuario == null){
+            view = inflater.inflate(R.layout.perfil_de_la_empresa, container, false);
+        }
+
+        return view;
+    }
+
+    private void botonCerrarSesion(){
         if (ValidSession.usuarioLogueado != null) {
             cerrarSesion.setVisibility(View.VISIBLE);
             cerrarSesion.setOnClickListener(new View.OnClickListener() {
@@ -67,8 +76,6 @@ public class ProfileFragment extends Fragment {
                 }
             });
         }
-
-        return view;
     }
 
     private void mapearCampos(View view) {
