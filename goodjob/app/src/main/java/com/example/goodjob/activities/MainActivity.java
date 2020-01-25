@@ -37,7 +37,6 @@ import com.example.goodjob.fragments.SolicitudProductosFragment;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private BottomNavigationView navigation;
-    private FloatingActionButton publicarActividad;
     private Toolbar toolbar;
     private NavigationView navigationView;
 
@@ -50,8 +49,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        publicarActividad = findViewById(R.id.fabPublicarActividad);
 
         cargarFragment(new HomeFragment());
 
@@ -69,16 +66,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onResume() {
         super.onResume();
-        mostrarBotonPublicar();
-        publicarActividad.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (ValidSession.empresaLogueada != null)
-                    startActivity(new Intent(MainActivity.this, PublicarActividadActivity.class));
-                else
-                    Toast.makeText(getApplicationContext(), "No puedes realizar esta acción", Toast.LENGTH_LONG).show();
-            }
-        });
         // here i'll do the magic trick
         if (ValidSession.empresaLogueada != null) {
             navigationView.getMenu().clear();
@@ -92,11 +79,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void setToolbar() {
         toolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
-    }
-
-    private void mostrarBotonPublicar() {
-        if (ValidSession.empresaLogueada != null)
-            publicarActividad.setVisibility(View.VISIBLE);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener

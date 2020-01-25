@@ -3,6 +3,7 @@ package com.example.goodjob.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -19,6 +20,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.goodjob.activities.DetailsAndApplyActivity;
 import com.example.goodjob.R;
+import com.example.goodjob.activities.MainActivity;
+import com.example.goodjob.activities.PublicarActividadActivity;
 import com.example.goodjob.adapter.ActivityAdapter;
 import com.example.goodjob.classes.Actividad;
 import com.example.goodjob.classes.ValidSession;
@@ -36,6 +39,7 @@ public class HomeFragment extends Fragment implements ActivityAdapter.OnActivity
 
     private RecyclerView activitiesRecycler;
     private List<Actividad> activities;
+    private FloatingActionButton publicarActividad;
 
     public HomeFragment() {
     }
@@ -51,10 +55,31 @@ public class HomeFragment extends Fragment implements ActivityAdapter.OnActivity
         LinearLayoutManager lm = new LinearLayoutManager(getContext());
         activitiesRecycler.setLayoutManager(lm);
         activitiesRecycler.setHasFixedSize(true);
+        publicarActividad = view.findViewById(R.id.fabPublicarActividad);
 
         Certificado.handleSSLHandshake();
         loadData();
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mostrarBotonPublicar();
+        publicarActividad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (ValidSession.empresaLogueada != null)
+                    startActivity(new Intent(getActivity(), PublicarActividadActivity.class));
+                else
+                    Toast.makeText(getContext(), "No puedes realizar esta acción", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    private void mostrarBotonPublicar() {
+        if (ValidSession.empresaLogueada != null)
+            publicarActividad.setVisibility(View.VISIBLE);
     }
 
     private void loadData() {
