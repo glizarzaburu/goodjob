@@ -66,3 +66,8 @@ fastlane/readme.md
 
 # credentials
 credenciales_db_remota.md
+
+# no needed folders anymore
+/Conexiones
+/DB
+/imagenes
