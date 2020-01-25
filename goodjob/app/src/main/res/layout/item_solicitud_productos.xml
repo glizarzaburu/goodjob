@@ -31,8 +31,8 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="@dimen/default_margin_top"
             android:layout_marginEnd="@dimen/default_margin_right"
-            tools:text="Goodjob"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:text="Goodjob" />
 
         <TextView
             android:id="@+id/tv_producto_nombre"
@@ -55,7 +55,7 @@
             android:layout_marginEnd="11dp"
             android:text="empresa publicante"
             android:textSize="20sp"
-            tools:text="20"/>
+            tools:text="20" />
 
         <TextView
             android:id="@+id/tv_producto_valor"
@@ -78,6 +78,6 @@
             android:layout_marginEnd="@dimen/default_margin_right"
             android:text="fecha de registro"
             android:textSize="20sp"
-            tools:text="500"/>
+            tools:text="500" />
     </RelativeLayout>
 </LinearLayout>

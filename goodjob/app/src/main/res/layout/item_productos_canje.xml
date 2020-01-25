@@ -1,100 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="480dp"
+    android:background="#FFFFCC"
+    android:orientation="vertical"
+    tools:context=".activities.DetailsAndApplyActivity">
 
-    <ImageView
-        android:id="@+id/ivProductoCanjeImagen"
-        android:layout_width="0dp"
-        android:layout_height="220dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="@string/producto"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/producto" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="270dp">
 
-    <TextView
-        android:id="@+id/tvProductoCanje"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/producto_canje"
-        app:layout_constraintBottom_toTopOf="@+id/tvProductoCanjeStock"
-        app:layout_constraintEnd_toStartOf="@+id/tvProductoCanjeValue"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivProductoCanjeImagen" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:padding="11dp">
 
-    <TextView
-        android:id="@+id/tvProductoCanjeStock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/stock"
-        app:layout_constraintBottom_toTopOf="@+id/tvProductoCanjeValor"
-        app:layout_constraintEnd_toStartOf="@+id/tvProductoCanjeStockValue"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvProductoCanje" />
+            <ImageView
+                android:id="@+id/ivProductoCanjeImagen"
+                android:layout_width="350dp"
+                android:layout_height="220dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/border_imageview"
+                tools:src="@drawable/producto" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvProductoCanjeValor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/valor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvProductoCanjeValorValue"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvProductoCanjeStock" />
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/tvProductoCanjeValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvProductoCanjeStockValue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvProductoCanje"
-        app:layout_constraintTop_toBottomOf="@+id/ivProductoCanjeImagen"
-        tools:text="Licuadora" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvProductoCanjeStockValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvProductoCanjeValorValue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvProductoCanjeStock"
-        app:layout_constraintTop_toBottomOf="@+id/tvProductoCanjeValue"
-        tools:text="20" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvProductoCanjeValorValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvProductoCanjeValor"
-        app:layout_constraintTop_toBottomOf="@+id/tvProductoCanjeStockValue"
-        tools:text="500" />
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
 
-    <!-- TODO: 1.0 agrega los textview para el lugar de canje por fa -->
 
-</android.support.constraint.ConstraintLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/tvProductoCanje"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:text="@string/producto_canje"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvProductoCanjeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"                      android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        tools:text="Licuadora"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tvProductoCanjeStock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:text="@string/stock"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvProductoCanjeStockValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="20"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tvProductoCanjeValor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/valor"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvProductoCanjeValorValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        tools:text="500" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tvLugarCanjeProducto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/lugar_canje"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvProductoCanjeLugarValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        tools:text="La Molina" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

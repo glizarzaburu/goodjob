@@ -72,6 +72,7 @@ public class ProductoCanjeAdapter extends RecyclerView.Adapter<ProductoCanjeAdap
             producto = v.findViewById(R.id.tvProductoCanjeValue);
             stock = v.findViewById(R.id.tvProductoCanjeStockValue);
             valor = v.findViewById(R.id.tvProductoCanjeValorValue);
+            lugarCanje = v.findViewById(R.id.tvProductoCanjeLugarValue);
             // TODO: 1.1 mapeas el lugarCanje con el id que le hayas colocado en el item_productos_canje.xml
             //  es importante que hagas esto antes de correrlo o te tirará un nullPointer cuando quieras ver los productos
         }

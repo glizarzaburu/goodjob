@@ -27,6 +27,7 @@ import java.io.IOException;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
+import uk.co.senab.photoview.PhotoViewAttacher;
 
 public class SolicitudActividadesEsperaDetalleFragment extends Fragment {
 
@@ -41,6 +42,7 @@ public class SolicitudActividadesEsperaDetalleFragment extends Fragment {
     private TextView tip_recompensa;
     private TextView trecompensa;
     private ImageView imagen;
+    //PhotoViewAttacher photoViewAttacher;
     private Button aceptar, rechazar;
 
     @Override
@@ -71,6 +73,7 @@ public class SolicitudActividadesEsperaDetalleFragment extends Fragment {
         tip_recompensa = v.findViewById(R.id.tvRecompensaDet);
         trecompensa = v.findViewById(R.id.tvPuntosDet);
         imagen = v.findViewById(R.id.imgEsperaDet);
+       // photoViewAttacher = new PhotoViewAttacher(imagen);
         aceptar = v.findViewById(R.id.btnAceptarActividad);
         rechazar = v.findViewById(R.id.btnRechazrActividad);
     }
