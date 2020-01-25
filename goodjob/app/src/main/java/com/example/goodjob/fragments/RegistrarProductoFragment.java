@@ -111,14 +111,12 @@ public class RegistrarProductoFragment extends Fragment {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(getContext(), response, Toast.LENGTH_SHORT).show();
-                        getFragmentManager().beginTransaction()
-                                .replace(R.id.containerFragments, new ProductoEsperaFragment())
-                                .commit();
+                        cargarFragmentProductosEmpresa(0);
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                        System.out.println(error.getMessage());
                     }
                 }) {
                     @Override
@@ -136,6 +134,19 @@ public class RegistrarProductoFragment extends Fragment {
                 Volley.newRequestQueue(getContext()).add(request);
             }
         });
+    }
+
+    private void cargarFragmentProductosEmpresa(int estado) {
+        Fragment fragment = new ProductoEsperaFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt("estado", estado);
+        fragment.setArguments(bundle);
+        cargarFragment(fragment);
+    }
+    private void cargarFragment(Fragment fragment) {
+        getFragmentManager().beginTransaction()
+                .replace(R.id.containerFragments, fragment)
+                .commit();
     }
 
     private boolean validarDatos() {

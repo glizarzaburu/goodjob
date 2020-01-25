@@ -43,7 +43,8 @@ public class ProductoEsperaFragment extends Fragment {
 
         prepararRecyclerView(view);
         productosEnEspera = new ArrayList<>();
-        estado = getArguments().getInt("estado");
+        Bundle bundle = this.getArguments();
+        estado = bundle.getInt("estado");
         cargarData();
 
         return view;
