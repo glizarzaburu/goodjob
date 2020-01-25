@@ -63,7 +63,7 @@
                         android:layout_weight="3"
                         android:textColor="@android:color/black"
                         android:textSize="20sp"
-                        android:text="@string/producto_canje"
+                        android:text="Producto :"
                         android:textStyle="bold" />
 
                     <TextView
@@ -87,9 +87,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:text="Stock :"
                         android:textColor="@android:color/black"
                         android:textSize="20sp"
-                        android:text="@string/stock"
                         android:textStyle="bold" />
 
                     <TextView
@@ -142,7 +142,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/lugar_canje"
+                        android:text="Lugar Canje :"
                         android:textColor="@android:color/black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
