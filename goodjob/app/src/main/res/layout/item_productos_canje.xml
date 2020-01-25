@@ -3,30 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="480dp"
+    android:layout_height="wrap_content"
     android:background="#FFFFCC"
     android:orientation="vertical"
     tools:context=".activities.DetailsAndApplyActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="270dp">
+        android:layout_height="240dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="240dp"
             android:background="#ffffff"
-            android:orientation="vertical"
-            android:padding="11dp">
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/ivProductoCanjeImagen"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="220dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:layout_gravity="center_horizontal"
                 android:background="@drawable/border_imageview"
                 tools:src="@drawable/producto" />
         </LinearLayout>
@@ -43,35 +42,37 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="360dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginStart="@dimen/default_margin_left"
+                android:layout_marginEnd="@dimen/default_margin_right"
                 android:orientation="vertical">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
                     android:orientation="horizontal"
                     android:padding="15dp">
 
                     <TextView
                         android:id="@+id/tvProductoCanje"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
+                        android:text="@string/producto_canje"
                         android:textColor="@android:color/black"
                         android:textSize="20sp"
-                        android:text="@string/producto_canje"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tvProductoCanjeValue"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"                      android:textColor="@android:color/black"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
                         android:textSize="20sp"
-                        tools:text="Licuadora"/>
+                        tools:text="Licuadora" />
 
                 </LinearLayout>
 
@@ -84,21 +85,21 @@
 
                     <TextView
                         android:id="@+id/tvProductoCanjeStock"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:text="@string/stock"
                         android:textColor="@android:color/black"
                         android:textSize="20sp"
-                        android:text="@string/stock"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tvProductoCanjeStockValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="20"
                         android:textColor="@android:color/black"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        tools:text="20" />
 
 
                 </LinearLayout>
@@ -112,7 +113,7 @@
 
                     <TextView
                         android:id="@+id/tvProductoCanjeValor"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/valor"
@@ -139,7 +140,7 @@
 
                     <TextView
                         android:id="@+id/tvLugarCanjeProductos"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/lugar_canje"
