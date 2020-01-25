@@ -4,9 +4,6 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:drawable="@color/colorPrimary"/>
-
-    <!-- it's working -->
-    <!-- TODO: este splash lo hice en paint con la imagen del pdf de Yaser, así que si uds chavos cuentan con mejores habilidades, ya saben que hacer -->
     <item>
         <bitmap
             android:gravity="fill"

@@ -129,6 +129,7 @@ public class RegistrarProductoFragment extends Fragment {
                         params.put("stock", stock.getText().toString().trim());
                         params.put("id_empresa", String.valueOf(ValidSession.empresaLogueada.getId()));
                         params.put("imagen", imageToString(bitmap));
+                        params.put("lugar_canje", lugarCanje.getText().toString().trim());
                         return params;
                     }
                 };

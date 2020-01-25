@@ -83,6 +83,7 @@ public class ProductosCanjeFragment extends Fragment {
         p.setStock(data.optInt("stock"));
         p.setValor(data.optDouble("valor"));
         p.setEmpresa(data.optString("empresa"));
+        p.setLugarCanje(data.optString("lugar_canje"));
         return p;
     }
 

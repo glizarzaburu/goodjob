@@ -9,29 +9,26 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_margin="10dp"
         android:layout_marginTop="5dp"
-        android:layout_margin="10dp">
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Caje de"
-            android:textStyle="bold"
+            android:text="Canje de"
             android:textColor="#FF9800"
-            android:textSize="24dp"
-
-            />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
             android:text="los productos"
             android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
-            android:textSize="24dp" />
-
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

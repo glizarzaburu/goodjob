@@ -183,12 +183,9 @@
     <!--Actividad espera detalle-->
     <string name="fecha_fin">Fecha Fin</string>
     <string name="fecha_creacion">Fecha Creacion</string>
-    <string name="Empresa"></string>
+    <string name="Empresa">Empresa</string>
     <string name="nombre_empresa">Nombre Empresa</string>
     <string name="dia_creacion">Fecha Creacion</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="goodjob_formar_parte">¿ Tienes una empresa y quieres ser parte de Goodjob ?</string>
     <string name="goodjob_formar_parte_2">Realiza una solicitud!!</string>
 

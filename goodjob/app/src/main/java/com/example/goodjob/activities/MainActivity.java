@@ -212,9 +212,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_productos_espera) {
             cargarFragment(new ProductoEsperaFragment());
         } else if (id == R.id.nav_productos_aceptados) {
-            // TODO: refactorizar producto espera fragment para que liste acà tmb
+            // TODO: Esto lo tengo que hacer yo. refactorizar producto espera fragment para que liste acà tmb
         } else if (id == R.id.nav_productos_rechazados) {
-            //TODO: refactorizar producto espera fragment para que liste acà tmb
+            //TODO: Esto lo tengo que hacer yo. refactorizar producto espera fragment para que liste acà tmb
         } else if (id == R.id.nav_actividades_registro) {
             startActivity(new Intent(getApplication(), PublicarActividadActivity.class));
         } else if (id == R.id.nav_actividades_espera) {

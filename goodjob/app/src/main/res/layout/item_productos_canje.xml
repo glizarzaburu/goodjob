@@ -95,4 +95,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tvProductoCanjeStockValue"
         tools:text="500" />
 
+    <!-- TODO: 1.0 agrega los textview para el lugar de canje por fa -->
+
 </android.support.constraint.ConstraintLayout>

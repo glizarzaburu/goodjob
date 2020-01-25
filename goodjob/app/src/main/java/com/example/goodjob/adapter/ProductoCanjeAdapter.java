@@ -52,6 +52,7 @@ public class ProductoCanjeAdapter extends RecyclerView.Adapter<ProductoCanjeAdap
                 System.out.println(error.getMessage());
             }
         });
+        pvh.lugarCanje.setText(p.getLugarCanje());
         Volley.newRequestQueue(pvh.itemView.getContext()).add(imageRequest);
     }
 
@@ -63,7 +64,7 @@ public class ProductoCanjeAdapter extends RecyclerView.Adapter<ProductoCanjeAdap
     static class ProductoCanjeViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView imagen;
-        private TextView producto, stock, valor;
+        private TextView producto, stock, valor, lugarCanje;
 
         private ProductoCanjeViewHolder(@NonNull View v) {
             super(v);
@@ -71,6 +72,7 @@ public class ProductoCanjeAdapter extends RecyclerView.Adapter<ProductoCanjeAdap
             producto = v.findViewById(R.id.tvProductoCanjeValue);
             stock = v.findViewById(R.id.tvProductoCanjeStockValue);
             valor = v.findViewById(R.id.tvProductoCanjeValorValue);
+            // TODO: 1.1 mapeas el lugarCanje con el id que le hayas colocado en el item_productos_canje.xml
         }
     }
 }
