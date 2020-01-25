@@ -5,7 +5,6 @@ Proyecto con el fin de promover un mejor cuidado del medio ambiente
 * [Integrantes](#integrantes)
 * [Historias de Usuario](#historias-de-usuario)
 * [Prerequisitos](#prerequisitos)
-* [Preparando el entorno local](#preparando-el-entorno-local)
 * [Como colaborar](#instrucciones-para-colaborar)
 
 ## Integrantes
@@ -19,7 +18,7 @@ Proyecto con el fin de promover un mejor cuidado del medio ambiente
 - [x] Aceptación/Rechazo de actividad	
 - [x] Perfil de usuario	
 - [ ] Mantenimiento de usuarios
-- [ ] Aceptación/Rechazo de producto
+- [x] Aceptación/Rechazo de producto
 #### Castillo Aycachi
 - [x] Solicitud de registro como empresa	
 - [x] Publicar actividad	
@@ -43,32 +42,7 @@ Proyecto con el fin de promover un mejor cuidado del medio ambiente
 
 Para este proyecto solo necesitas:
 * Android studio - descargalo de su [página oficial](https://developer.android.com/studio)
-* Xampp - descargalo de su [página oficial](https://www.apachefriends.org/index.html)
 
-## Preparando el Entorno Local
-1. Lo primero es tener la base de datos, por lo que necesitas iniciar xampp.
-
-[starting-xampp]:https://i.ibb.co/7W5n7x9/image.png "Starting XAMPP"
->![alt text][starting-xampp]
-
-**Nota:** Si estás en windows debes buscar el panel de xampp e iniciarlo.
-
-2. Ahora debes entrar a phpMyAdmin atraves del navegador en [localhost/phpmyadmin](localhost/phpmyadmin) y dirigirte a la sección *importar* y seleccionar el archivo sql para finalmente darle continuar
-
-[importing-xampp]:https://i.ibb.co/XC5BD4R/image.png "Importing XAMPP"
->![alt text][importing-xampp]
-
-**Nota:** El archivo sql de goodjob se encuentra en la carpeta **DB** con el nombre de *goodjod.sql*
-
-3. Ahora debemos copiar toda la carpeta **Conexiones** e **imagenes-actividades** dentro de la carpeta de *htdocs* de XAMPP. 
-
-[htdocs-xampp]:https://i.ibb.co/FnpXhMd/xamp-carpetas.png "htdocs XAMPP"
->![alt text][htdocs-xampp]
-
-4. Genial! el último paso es chekar tu IP local y ubicarla en la variable ValidSession.LOCAL
-
-[ip]:https://i.ibb.co/7R09xHC/validsession-ip.png "IP local"
->![alt text][ip]
 
 ## Instrucciones para colaborar
 
