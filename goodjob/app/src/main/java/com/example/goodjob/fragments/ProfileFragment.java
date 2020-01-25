@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ public class ProfileFragment extends Fragment {
     private TextView nombreCompleto;
     private TextView reputacion;
     private TextView puntaje;
+    private Button cerrarSesion;
 
     public ProfileFragment() {
     }
@@ -47,10 +49,24 @@ public class ProfileFragment extends Fragment {
         if (idUsuario == null && ValidSession.usuarioLogueado != null)
             idUsuario = ValidSession.usuarioLogueado.getId();
 
-        if (ValidSession.usuarioLogueado == null)
+        if (ValidSession.usuarioLogueado == null && ValidSession.empresaLogueada == null)
             return view;
 
         consultarPerfilUsuario(idUsuario);
+
+        if (ValidSession.usuarioLogueado != null) {
+            cerrarSesion.setVisibility(View.VISIBLE);
+            cerrarSesion.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ValidSession.usuarioLogueado = null;
+                    ValidSession.empresaLogueada = null;
+                    getFragmentManager().beginTransaction()
+                            .replace(R.id.containerFragments, new HomeFragment())
+                            .commit();
+                }
+            });
+        }
 
         return view;
     }
@@ -59,6 +75,7 @@ public class ProfileFragment extends Fragment {
         nombreCompleto = view.findViewById(R.id.tvNombreCompletoPerfil);
         reputacion = view.findViewById(R.id.tvReputacionPerfil);
         puntaje = view.findViewById(R.id.tvPuntajePerfil);
+        cerrarSesion = view.findViewById(R.id.cerrar_sesion_button);
     }
 
     private void consultarPerfilUsuario(Integer idUsuario) {

@@ -73,6 +73,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (ValidSession.usuarioLogueado != null && ValidSession.usuarioLogueado.getTipoUsuario().equals("Administrador")) {
             navigationView.getMenu().clear();
             navigationView.inflateMenu(R.menu.administrador_menu);
+        } else if (ValidSession.empresaLogueada == null && ValidSession.usuarioLogueado == null) {
+            navigationView.getMenu().clear();
+            navigationView.inflateMenu(R.menu.activity_main_drawer);
         }
     }
 
@@ -183,7 +186,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
