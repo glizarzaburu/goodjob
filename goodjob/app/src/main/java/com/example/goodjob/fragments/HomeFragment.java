@@ -105,7 +105,6 @@ public class HomeFragment extends Fragment implements ActivityAdapter.OnActivity
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getActivity().getApplicationContext(), "Internet lento o servidor ocupado", Toast.LENGTH_LONG).show();
             }
         });
         requestQueue.add(jsonRequest);

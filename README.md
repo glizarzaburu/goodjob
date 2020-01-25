@@ -14,16 +14,17 @@ Proyecto con el fin de promover un mejor cuidado del medio ambiente
 * [Pacheco Bada](https://github.com/pbada1996/)
 
 ## Historias de Usuario
-#### Cachi Ayala
-- [x] Aceptación/Rechazo de actividad	
+#### Cachi Ayala	
 - [x] Perfil de usuario	
 - [ ] Mantenimiento de usuarios
-- [x] Aceptación/Rechazo de producto
 #### Castillo Aycachi
-- [x] Solicitud de registro como empresa	
+- [x] Solicitud de registro como empresa
+- [x] Aceptar/Rechazar Solicitudes de Empresas 	
+- [x] Aceptación/Rechazo de actividad 
 - [x] Publicar actividad	
 - [x] Registro de productos canjeados
-- [x] Canje de puntos	
+- [x] Canje de puntos
+- [x] Aceptación/Rechazo de producto
 - [ ] Reparto de recompensa	
 #### Lizarzaburu Mercado
 - [x] Inicio de sesión	

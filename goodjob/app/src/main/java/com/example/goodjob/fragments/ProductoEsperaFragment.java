@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -32,6 +33,7 @@ public class ProductoEsperaFragment extends Fragment {
     private RecyclerView rvProductosEspera;
     private List<ProductoEspera> productosEnEspera;
     private Integer estado = null;
+    private TextView estadoProducto;
 
     public ProductoEsperaFragment() {
     }
@@ -45,9 +47,25 @@ public class ProductoEsperaFragment extends Fragment {
         productosEnEspera = new ArrayList<>();
         Bundle bundle = this.getArguments();
         estado = bundle.getInt("estado");
+        estadoProducto = view.findViewById(R.id.estado_producto_text);
+        establecerEstadoProductoTexto();
         cargarData();
 
         return view;
+    }
+
+    private void establecerEstadoProductoTexto(){
+        switch (estado) {
+            case 0:
+                estadoProducto.setText("En espera");
+                break;
+            case 1:
+                estadoProducto.setText("Aceptados");
+                break;
+            case 2:
+                estadoProducto.setText("Rechazados");
+                break;
+        }
     }
 
     private void prepararRecyclerView(View view) {
