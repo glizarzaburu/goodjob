@@ -31,6 +31,7 @@ public class ProductoEsperaFragment extends Fragment {
 
     private RecyclerView rvProductosEspera;
     private List<ProductoEspera> productosEnEspera;
+    private Integer estado = null;
 
     public ProductoEsperaFragment() {
     }
@@ -42,6 +43,7 @@ public class ProductoEsperaFragment extends Fragment {
 
         prepararRecyclerView(view);
         productosEnEspera = new ArrayList<>();
+        estado = getArguments().getInt("estado");
         cargarData();
 
         return view;
@@ -54,8 +56,18 @@ public class ProductoEsperaFragment extends Fragment {
         rvProductosEspera.setHasFixedSize(true);
     }
 
+    /*
+        El nombre aquí va a quedar incongruente, pero debido a apuros lo dejaré así.
+        Si gustas de modificarlo luego para que quede más legible, hazlo.
+        La confusión puede darse por el nombre(obviamente), ya que no solo lista productos en espera
+        sino que lista productos en base al estado que le mandes:
+        0: en espera
+        1: aceptados
+        2: rechazados
+    * */
     private void cargarData() {
-        String url = ValidSession.IP + "/ws_listarProductosEnEspera.php?id_empresa=" + ValidSession.empresaLogueada.getId();
+        String url = ValidSession.IP + "/ws_listarProductosEnEspera.php?id_empresa=" + ValidSession.empresaLogueada.getId() +
+                "&estado=" + estado;
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

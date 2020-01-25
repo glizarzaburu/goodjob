@@ -192,11 +192,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_registrar_producto) { // empresas
             cargarFragment(new RegistrarProductoFragment());
         } else if (id == R.id.nav_productos_espera) {
-            cargarFragment(new ProductoEsperaFragment());
+            cargarFragmentProductosEmpresa(0);
         } else if (id == R.id.nav_productos_aceptados) {
-            // TODO: Esto lo tengo que hacer yo. refactorizar producto espera fragment para que liste acà tmb
+            cargarFragmentProductosEmpresa(1);
         } else if (id == R.id.nav_productos_rechazados) {
-            //TODO: Esto lo tengo que hacer yo. refactorizar producto espera fragment para que liste acà tmb
+            cargarFragmentProductosEmpresa(2);
         } else if (id == R.id.nav_actividades_registro) {
             startActivity(new Intent(getApplication(), PublicarActividadActivity.class));
         } else if (id == R.id.nav_actividades_espera) {
@@ -226,6 +226,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void cargarFragmentActividadesEmpresa(int estado) {
         Fragment fragment = new ListadoActividadEmpresaEstadoFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt("estado", estado);
+        fragment.setArguments(bundle);
+        cargarFragment(fragment);
+    }
+
+    private void cargarFragmentProductosEmpresa(int estado) {
+        Fragment fragment = new ProductoEsperaFragment();
         Bundle bundle = new Bundle();
         bundle.putInt("estado", estado);
         fragment.setArguments(bundle);
