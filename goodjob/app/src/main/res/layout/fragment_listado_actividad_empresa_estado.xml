@@ -6,14 +6,35 @@
     android:orientation="vertical"
     tools:context=".fragments.ListadoActividadEmpresaEstadoFragment">
 
-    <TextView
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/default_margin_top"
-        android:layout_marginBottom="@dimen/default_margin_bottom"
-        android:gravity="center_horizontal"
-        android:text="@string/actividades"
-        android:textSize="24sp" />
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Actividad"
+            android:textStyle="bold"
+            android:textColor="#FF9800"
+            android:textSize="24sp"
+
+            />
+
+        <TextView
+            android:id="@+id/estado_actividad_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="en espera"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="24sp" />
+
+
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvActividadesEmpresa"

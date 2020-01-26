@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -31,6 +32,8 @@ public class ListadoActividadEmpresaEstadoFragment extends Fragment {
     private RecyclerView rvActividades;
     private List<ListadoActividadesEmpresa> actividadesEmpresas;
     private Integer estado = null;
+    private TextView estadoActividades;
+
 
     public ListadoActividadEmpresaEstadoFragment() {
     }
@@ -44,11 +47,29 @@ public class ListadoActividadEmpresaEstadoFragment extends Fragment {
         Bundle bundle = this.getArguments();
         estado = bundle.getInt("estado");
         actividadesEmpresas = new ArrayList<>();
+        estadoActividades = view.findViewById(R.id.estado_actividad_text);
+        establecerEstadoActividadTexto();
         setRecycler(view);
         cargarData();
 
         return view;
     }
+
+    private void establecerEstadoActividadTexto(){
+        switch (estado) {
+            case 0:
+                estadoActividades.setText("en Espera");
+                break;
+            case 1:
+                estadoActividades.setText("Aceptados");
+                break;
+            case 2:
+                estadoActividades.setText("Rechazadas");
+                break;
+        }
+    }
+
+
 
     private void setRecycler(View view) {
         rvActividades = view.findViewById(R.id.rvActividadesEmpresa);

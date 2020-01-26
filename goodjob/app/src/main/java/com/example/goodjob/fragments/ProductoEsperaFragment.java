@@ -35,6 +35,7 @@ public class ProductoEsperaFragment extends Fragment {
     private Integer estado = null;
     private TextView estadoProducto;
 
+
     public ProductoEsperaFragment() {
     }
 
